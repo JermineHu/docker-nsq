@@ -55,9 +55,12 @@ go get github.com/nsqio/nsq/... ; \
     gpm install ; \
     pwd ;\
     ls -alh ;\
-    go build -a -v -o nsq ;\
-    chmod +x /go/src/github.com/nsqio/nsq/nsq ; \
-    mv /go/src/github.com/nsqio/nsq/nsq /usr/local/bin/nsq ; \
+    
+  make ; \
+  make install ; \
+  
+  ls /usr/local/bin -alh ;
+  
 	rm -r /var/cache/apk ; \
 	rm -r /usr/share/man ; \
 	rm -rf /go /usr/local/go ;\
