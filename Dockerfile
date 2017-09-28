@@ -2,9 +2,6 @@ FROM alpine:3.6
 MAINTAINER Jermine <Jermine.hu@qq.com>
 ENV GOLANG_VERSION 1.9
 
-COPY *.patch /go-alpine-patches/
-COPY go-wrapper /usr/local/bin/
-
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
