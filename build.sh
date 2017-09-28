@@ -15,7 +15,7 @@
 
 set -e
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DIR="$(pwd)"
 rm -rf   $DIR/dist/docker
 mkdir -p $DIR/dist/docker
 rm -rf   $DIR/.godeps
