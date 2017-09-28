@@ -41,10 +41,10 @@ for os in linux darwin freebsd windows; do
     if [ "$os" == "linux" ]; then
         cp -r $TARGET/bin $DIR/dist/docker/
     fi
-    sudo chown -R 0:0 $TARGET
+     chown -R 0:0 $TARGET
     tar czvf $TARGET.tar.gz $TARGET
     mv $TARGET.tar.gz $DIR/dist
     popd
     make clean
-    sudo rm -r $BUILD
+     rm -r $BUILD
 done
