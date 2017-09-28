@@ -53,7 +53,11 @@ wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm && chmod +x gpm &
 git clone https://github.com/nsqio/nsq.git /go/src/github.com/nsqio/nsq ; \
     cd /go/src/github.com/nsqio/nsq ; \
     gpm install ; \
-    mv bin/nsq /usr/local/bin/nsq ; \
+    pwd ;\
+    ls -alh ;\
+    go build -a -v -o nsq ;\
+    chmod +x /go/src/github.com/nsqio/nsq/nsq ; \
+    mv /go/src/github.com/nsqio/nsq/nsq /usr/local/bin/nsq ; \
 	rm -r /var/cache/apk ; \
 	rm -r /usr/share/man ; \
 	rm -rf /go /usr/local/go ;\
