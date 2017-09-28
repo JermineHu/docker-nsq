@@ -58,7 +58,7 @@ go get github.com/nsqio/nsq/... ; \
     ls -alh ;\
     mv /build.sh . ;\
     bash build.sh ;\
-   mv /go/src/github.com/nsqio/dist/docker/bin/* /usr/local/bin/ ;\
+     ls -alh /usr/local/bin ;\
    ln -s /usr/local/bin/*nsq* / ;\
   ln -s /usr/local/bin/*nsq* /bin/ ;\
   ls /usr/local/bin -alh ; \
