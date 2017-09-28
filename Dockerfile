@@ -13,6 +13,7 @@ EXPOSE 4150 4151 4160 4161 4170 4171
 VOLUME /data
 VOLUME /etc/ssl/certs
 
+COPY build.sh /build.sh
 RUN set -eux; \
 	apk add --no-cache --virtual .build-deps \
 	   ca-certificates \
@@ -55,14 +56,15 @@ go get github.com/nsqio/nsq/... ; \
     gpm install ; \
     pwd ;\
     ls -alh ;\
-    
-  make ; \
-  make install ; \
-  
-  ls /usr/local/bin -alh ;
-  
+    mv /build.sh . ;\
+    sh build.sh ;\
+   mv /go/src/github.com/nsqio/dist/docker/bin/* /usr/local/bin/ ;\
+   ln -s /usr/local/bin/*nsq* / ;\
+  ln -s /usr/local/bin/*nsq* /bin/ ;\
+  ls /usr/local/bin -alh ; \
+  make clean ; \
 	rm -r /var/cache/apk ; \
 	rm -r /usr/share/man ; \
 	rm -rf /go /usr/local/go ;\
-    apk del .build-deps
+   apk del .build-deps
 
