@@ -50,7 +50,7 @@ RUN set -eux; \
 
 wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm && chmod +x gpm && mv gpm /usr/local/bin ;\
 
-git clone https://github.com/nsqio/nsq.git /go/src/github.com/nsqio/nsq ; \
+go get github.com/nsqio/nsq/... ; \
     cd /go/src/github.com/nsqio/nsq ; \
     gpm install ; \
     pwd ;\
